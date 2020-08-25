@@ -62,6 +62,7 @@ class AccountMove(models.Model):
                             factura.numero_fel = numero_autorizacion.get("Numero")
                             factura.documento_xml_fel = base64.b64encode(xml_sin_firma)
                             factura.resultado_xml_fel = base64.b64encode(etree.tostring(xml_certificado_root, encoding="UTF-8"))
+                            factura.certificador_fel = 'gom' 
 
                             headers = { "Content-Type": "application/xml", "authorization": "Bearer "+token }
                             data = '<solicitud><uuid>{}</uuid></solicitud>'.format(factura.firma_fel)
