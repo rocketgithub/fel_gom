@@ -32,7 +32,7 @@ class AccountMove(models.Model):
                     xml_sin_firma = etree.tostring(dte, encoding="UTF-8")
                     logging.warn(xml_sin_firma.decode('utf-8'))
 
-                    request_url = "https://felapipruebas.nubegom.com/servicio"
+                    request_url = "https://caasbi.nubegom.com/felapi/servicio"
                     if factura.company_id.pruebas_fel:
                         request_url = "https://felapipruebas.nubegom.com/servicio/"
 
